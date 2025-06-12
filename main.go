@@ -12,5 +12,6 @@ func main() {
 		Handler: mux,
 	}
 	fmt.Println("Starting server on :8080")
+	mux.Handle("/", http.FileServer(http.Dir(".")))
 	s.ListenAndServe()
 }
